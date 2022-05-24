@@ -27,6 +27,7 @@ const Navigation = () => {
   return (
     <div className="navbar-div">
       <Navbar
+        fixed="top"
         collapseOnSelect
         expand="lg"
         bg="dark"

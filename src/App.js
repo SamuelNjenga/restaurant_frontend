@@ -5,6 +5,8 @@ import TopNavbar from "./components/top-navbar/TopNavbar";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./components/header/Navigation";
+import Main from "./components/pages/Main";
+
 
 const App = () => {
   return (
@@ -12,7 +14,9 @@ const App = () => {
       <Router>
         <TopNavbar />
         <Navigation />
-        <Routes></Routes>
+        <Routes>
+          <Route path="/" element={<Main />} />{" "}
+        </Routes>
       </Router>
     </div>
   );
