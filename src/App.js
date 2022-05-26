@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import TopNavbar from "./components/top-navbar/TopNavbar";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./components/header/Navigation";
 import Main from "./components/pages/Main";
 
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import './App.css'
 
 const App = () => {
   return (
