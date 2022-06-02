@@ -6,6 +6,7 @@ import Menu from "./Menu";
 import Specials from "../specials/Specials";
 import Events from "../events/Events";
 import Reservation from "../reservation/Reservation";
+import Testimonial from "../testimonials/Testimonial";
 
 const Main = () => {
   return (
@@ -17,6 +18,7 @@ const Main = () => {
       <Specials />
       <Events />
       <Reservation />
+      <Testimonial />
     </div>
   );
 };
