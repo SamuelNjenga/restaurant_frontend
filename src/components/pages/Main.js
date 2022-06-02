@@ -4,7 +4,9 @@ import About from "./About";
 import WhyUs from "./WhyUs";
 import Menu from "./Menu";
 import Specials from "../specials/Specials";
-import Events from '../events/Events'
+import Events from "../events/Events";
+import Reservation from "../reservation/Reservation";
+
 const Main = () => {
   return (
     <div>
@@ -14,6 +16,7 @@ const Main = () => {
       <Menu />
       <Specials />
       <Events />
+      <Reservation />
     </div>
   );
 };
