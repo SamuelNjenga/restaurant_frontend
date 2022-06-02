@@ -4,7 +4,7 @@ import About from "./About";
 import WhyUs from "./WhyUs";
 import Menu from "./Menu";
 import Specials from "../specials/Specials";
-
+import Events from '../events/Events'
 const Main = () => {
   return (
     <div>
@@ -13,6 +13,7 @@ const Main = () => {
       <WhyUs />
       <Menu />
       <Specials />
+      <Events />
     </div>
   );
 };
