@@ -6,6 +6,7 @@ import Menu from "./Menu";
 import Specials from "../specials/Specials";
 import Events from "../events/Events";
 import Chef from "../chef/Chef";
+import Contact from "../contact/Contact";
 import Reservation from "../reservation/Reservation";
 import Testimonial from "../testimonials/Testimonial";
 
@@ -21,6 +22,7 @@ const Main = () => {
       <Reservation />
       <Testimonial />
       <Chef />
+      <Contact />
     </div>
   );
 };

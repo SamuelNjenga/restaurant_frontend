@@ -31,10 +31,10 @@ const Chef = () => {
                     <span>Master Chef</span>
                   </div>
                   <div className="social">
-                    <FaTwitter className="m-1" />
-                    <FaFacebook className="m-1" />
-                    <FaInstagram className="m-1" />
-                    <FaLinkedin className="m-1" />
+                    <FaTwitter className="m-1 icon-hover" />
+                    <FaFacebook className="m-1 icon-hover" />
+                    <FaInstagram className="m-1 icon-hover" />
+                    <FaLinkedin className="m-1 icon-hover" />
                   </div>
                 </div>
               </div>
@@ -53,10 +53,10 @@ const Chef = () => {
                     <span>Patissier</span>
                   </div>
                   <div className="social">
-                    <FaTwitter className="m-1" />
-                    <FaFacebook className="m-1" />
-                    <FaInstagram className="m-1" />
-                    <FaLinkedin className="m-1" />
+                    <FaTwitter className="m-1 icon-hover" />
+                    <FaFacebook className="m-1 icon-hover" />
+                    <FaInstagram className="m-1 icon-hover" />
+                    <FaLinkedin className="m-1 icon-hover" />
                   </div>
                 </div>
               </div>
@@ -75,10 +75,10 @@ const Chef = () => {
                     <span>Cook</span>
                   </div>
                   <div className="social">
-                    <FaTwitter className="m-1" />
-                    <FaFacebook className="m-1" />
-                    <FaInstagram className="m-1" />
-                    <FaLinkedin className="m-1" />
+                    <FaTwitter className="m-1 icon-hover" />
+                    <FaFacebook className="m-1 icon-hover" />
+                    <FaInstagram className="m-1 icon-hover" />
+                    <FaLinkedin className="m-1 icon-hover" />
                   </div>
                 </div>
               </div>

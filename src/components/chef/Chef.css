@@ -51,7 +51,7 @@
   margin: 0 10px;
   display: inline-block;
 }
-.chefs .member .social a:hover {
+.chefs .member .social .icon-hover:hover {
   color: #cda45e;
 }
 .chefs .member .social i {
