@@ -7,7 +7,10 @@
 }
 .testimonials .testimonial-item {
   box-sizing: content-box;
-  min-height: 320px;
+  width: 300px;
+}
+.testimonials .testimonial-item p {
+  height: 200px;
 }
 .testimonials .testimonial-item .testimonial-img {
   width: 90px;
@@ -66,4 +69,24 @@
 }
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #cda45e;
+}
+.testimonials-quote {
+  color: #cda45e;
+  font-size: 9px;
+  margin: 8px;
+}
+
+.swiper-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media screen and (max-width: 720px) {
+  .testimonials .testimonial-item {
+    width: 80%;
+  }
+  .swiper-flex {
+    flex-direction: column;
+  }
 }

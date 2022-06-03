@@ -1,5 +1,8 @@
 import React from "react";
 
+import { FaQuoteLeft } from "react-icons/fa";
+import { FaQuoteRight } from "react-icons/fa";
+
 import "./Testimonial.css";
 import "../pages/Main.css";
 
@@ -18,16 +21,13 @@ const Testimonial = () => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div className="swiper-wrapper">
+            <div className="swiper-wrapper swiper-flex">
               <div className="swiper-slide">
                 <div className="testimonial-item">
                   <p>
-                    <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Proin iaculis purus consequat sem cure digni ssim donec
-                    porttitora entum suscipit rhoncus. Accusantium quam,
-                    ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                    risus at semper.
-                    <i className="bx bxs-quote-alt-right quote-icon-right"></i>
+                    <FaQuoteLeft className="testimonials-quote" />
+                    A wonderful restaurant.
+                    <FaQuoteRight className="testimonials-quote" />
                   </p>
                   <img
                     src="assets/img/testimonials/testimonials-1.jpg"
@@ -35,19 +35,16 @@ const Testimonial = () => {
                     alt=""
                   />
                   <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
+                  <h4>Customer</h4>
                 </div>
               </div>
 
               <div className="swiper-slide">
                 <div className="testimonial-item">
                   <p>
-                    <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Export tempor illum tamen malis malis eram quae irure esse
-                    labore quem cillum quid cillum eram malis quorum velit fore
-                    eram velit sunt aliqua noster fugiat irure amet legam anim
-                    culpa.
-                    <i className="bx bxs-quote-alt-right quote-icon-right"></i>
+                    <FaQuoteLeft className="testimonials-quote" />
+                    Such a fantastic restaurant.
+                    <FaQuoteRight className="testimonials-quote" />
                   </p>
                   <img
                     src="assets/img/testimonials/testimonials-2.jpg"
@@ -55,18 +52,17 @@ const Testimonial = () => {
                     alt=""
                   />
                   <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
+                  <h4>Customer</h4>
                 </div>
               </div>
 
               <div className="swiper-slide">
                 <div className="testimonial-item">
                   <p>
-                    <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Enim nisi quem export duis labore cillum quae magna enim
-                    sint quorum nulla quem veniam duis minim tempor labore quem
-                    eram duis noster aute amet eram fore quis sint minim.
-                    <i className="bx bxs-quote-alt-right quote-icon-right"></i>
+                    <FaQuoteLeft className="testimonials-quote" />
+                    The food quality and service was outstanding in the
+                    restaurant.
+                    <FaQuoteRight className="testimonials-quote" />
                   </p>
                   <img
                     src="assets/img/testimonials/testimonials-3.jpg"
@@ -74,11 +70,11 @@ const Testimonial = () => {
                     alt=""
                   />
                   <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
+                  <h4>Customer</h4>
                 </div>
               </div>
 
-              <div className="swiper-slide">
+              {/* <div className="swiper-slide">
                 <div className="testimonial-item">
                   <p>
                     <i className="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -96,8 +92,8 @@ const Testimonial = () => {
                   <h3>Matt Brandon</h3>
                   <h4>Freelancer</h4>
                 </div>
-              </div>
-              <div className="swiper-slide">
+              </div> */}
+              {/* <div className="swiper-slide">
                 <div className="testimonial-item">
                   <p>
                     <i className="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -115,7 +111,7 @@ const Testimonial = () => {
                   <h3>John Larson</h3>
                   <h4>Entrepreneur</h4>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="swiper-pagination"></div>
           </div>

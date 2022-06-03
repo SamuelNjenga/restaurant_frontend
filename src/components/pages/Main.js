@@ -5,6 +5,7 @@ import WhyUs from "./WhyUs";
 import Menu from "./Menu";
 import Specials from "../specials/Specials";
 import Events from "../events/Events";
+import Chef from "../chef/Chef";
 import Reservation from "../reservation/Reservation";
 import Testimonial from "../testimonials/Testimonial";
 
@@ -19,6 +20,7 @@ const Main = () => {
       <Events />
       <Reservation />
       <Testimonial />
+      <Chef />
     </div>
   );
 };
