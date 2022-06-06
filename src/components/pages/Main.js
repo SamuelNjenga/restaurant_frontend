@@ -7,6 +7,7 @@ import Specials from "../specials/Specials";
 import Events from "../events/Events";
 import Chef from "../chef/Chef";
 import Contact from "../contact/Contact";
+import Footer from "../footer/Footer";
 import Reservation from "../reservation/Reservation";
 import Testimonial from "../testimonials/Testimonial";
 
@@ -23,6 +24,7 @@ const Main = () => {
       <Testimonial />
       <Chef />
       <Contact />
+      <Footer />
     </div>
   );
 };

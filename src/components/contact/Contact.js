@@ -17,7 +17,7 @@ const Contact = () => {
             <p>Contact Us</p>
           </div>
         </div>
-        <div data-aos="fade-up">
+        {/* <div data-aos="fade-up">
           <iframe
             style={{ border: "0", width: "100%", height: "350px" }}
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755656"
@@ -25,7 +25,7 @@ const Contact = () => {
             title="map"
             allowfullscreen
           ></iframe>
-        </div>
+        </div> */}
 
         <div className="container" data-aos="fade-up">
           <div className="row mt-5">
@@ -34,7 +34,7 @@ const Contact = () => {
                 <div>
                   <FaMapMarkerAlt className="icon-class" />
                   <h4>Location:</h4>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <p>ABC Sam Street, City B, 567</p>
                 </div>
 
                 <div className="open-hours">
@@ -56,7 +56,7 @@ const Contact = () => {
                 <div className="phone">
                   <FaPhoneAlt className="icon-class" />
                   <h4>Call:</h4>
-                  <p>+1 5589 55488 55s</p>
+                  <p>+254 712435678</p>
                 </div>
               </div>
             </div>
