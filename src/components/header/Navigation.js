@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
 
+import {
+  Container,
+  DropdownButton,
+  Nav,
+  Navbar,
+  Dropdown,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 
+import Login from "../account/Login";
+import SignUp from "../account/SignUp";
 import "./Navigation.css";
 
 const Navigation = () => {
@@ -83,6 +91,20 @@ const Navigation = () => {
                 eventKey={7}
               >
                 BOOK A TABLE
+              </Nav.Link>
+              <Nav.Link className="nav-link-class">
+                <DropdownButton
+                  id="dropdown-item-button"
+                  title="ACCOUNT"
+                  variant="danger"
+                >
+                  <Dropdown.Item as="button">
+                    <Login />
+                  </Dropdown.Item>
+                  <Dropdown.Item as="button">
+                    <SignUp />
+                  </Dropdown.Item>
+                </DropdownButton>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

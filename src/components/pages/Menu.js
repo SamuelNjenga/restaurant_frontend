@@ -1,9 +1,13 @@
 import React from "react";
 
+import { useCategories } from "../../contexts/CategoryContext";
+
 import "./Main.css";
 import "./Menu.css";
 
 const Menu = () => {
+  const { categories } = useCategories();
+
   return (
     <div>
       <section id="menu" className="menu section-bg">
@@ -18,9 +22,13 @@ const Menu = () => {
                 <li data-filter="*" className="filter-active">
                   All
                 </li>
-                <li data-filter=".filter-starters">Starters</li>
-                <li data-filter=".filter-salads">Salads</li>
-                <li data-filter=".filter-specialty">Specialty</li>
+                {categories.map((category) => {
+                  return (
+                    <li data-filter=".filter-starters" key={category.id}>
+                      {category.name}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
