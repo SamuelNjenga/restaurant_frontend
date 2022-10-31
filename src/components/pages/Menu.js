@@ -98,7 +98,7 @@ const Menu = () => {
                   >
                     <Image
                       key={menuItem.id}
-                      cloudName={process.env.REACT_APP_CLOUD_NAME}
+                      cloudName={'djtbvi5cq'}
                       publicId={`${menuItem.image}`}
                       className="menu-img"
                       crop="scale"
