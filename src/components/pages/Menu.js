@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+import Button from "@mui/material/Button";
+import { Image } from "cloudinary-react";
+import { Circles, Rings } from "react-loading-icons";
 
 import { useCategories } from "../../contexts/CategoryContext";
+import { useMenuItems } from "../../contexts/MenuItemContext";
+import { getItemsBasedOnTitle } from "../../services/APIUtils";
 
 import "./Main.css";
 import "./Menu.css";
 
 const Menu = () => {
-  const { categories } = useCategories();
+  const { categories, loadingCategories } = useCategories();
+  const { menuItems, loadingItems, setLoadingItems } = useMenuItems();
+  let [items, setItems] = useState([]);
+
+  useEffect(() => {
+    setItems(menuItems);
+  }, [menuItems]);
 
   return (
     <div>
@@ -16,162 +28,92 @@ const Menu = () => {
             <h2>Menu</h2>
             <p>Check Our Tasty Menu</p>
           </div>
-          <div className="row" data-aos="fade-up" data-aos-delay="100">
-            <div className="col-lg-12 d-flex justify-content-center">
-              <ul id="menu-flters">
-                <li data-filter="*" className="filter-active">
-                  All
-                </li>
-                {categories.map((category) => {
-                  return (
-                    <li data-filter=".filter-starters" key={category.id}>
-                      {category.name}
+          <div
+            className="row categories__menu"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            {loadingCategories ? (
+              <Rings height={"3em"} />
+            ) : (
+              <div className="col-lg-12 d-flex justify-content-center">
+                <ul id="menu-flters">
+                  <Button
+                    onClick={() => {
+                      setItems(menuItems);
+                    }}
+                    variant="text"
+                  >
+                    <li
+                      data-filter="*"
+                      // className="filter-active"
+                    >
+                      All
                     </li>
-                  );
-                })}
-              </ul>
-            </div>
+                  </Button>
+                  {categories.map((category) => {
+                    return (
+                      <Button
+                        key={category.id}
+                        onClick={async () => {
+                          try {
+                            setLoadingItems(true);
+                            const res = await getItemsBasedOnTitle(
+                              category.name
+                            );
+                            const data = res.data[0].menuItems;
+                            setItems(data);
+                            setLoadingItems(false);
+                          } catch (err) {
+                            console.log(err);
+                            setLoadingItems(false);
+                          }
+                        }}
+                      >
+                        <div>
+                          <li data-filter=".filter-starters">
+                            {category.name}
+                          </li>
+                        </div>
+                      </Button>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
           </div>
-
           <div
             className="row menu-container"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div className="col-lg-6 menu-item filter-starters">
-              <img
-                src="assets/img/menu/lobster-bisque.jpg"
-                className="menu-img"
-                alt=""
-              />
-              <div className="menu-content">
-                <a href="#">Lobster Bisque</a>
-                <span>$5.95</span>
-              </div>
-              <div className="menu-ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </div>
-            </div>
-
-            <div className="col-lg-6 menu-item filter-specialty">
-              <img
-                src="assets/img/menu/bread-barrel.jpg"
-                className="menu-img"
-                alt=""
-              />
-              <div className="menu-content">
-                <a href="#">Bread Barrel</a>
-                <span>$6.95</span>
-              </div>
-              <div className="menu-ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </div>
-            </div>
-
-            <div className="col-lg-6 menu-item filter-starters">
-              <img src="assets/img/menu/cake.jpg" className="menu-img" alt="" />
-              <div className="menu-content">
-                <a href="#">Crab Cake</a>
-                <span>$7.95</span>
-              </div>
-              <div className="menu-ingredients">
-                A delicate crab cake served on a toasted roll with lettuce and
-                tartar sauce
-              </div>
-            </div>
-
-            <div className="col-lg-6 menu-item filter-salads">
-              <img
-                src="assets/img/menu/caesar.jpg"
-                className="menu-img"
-                alt=""
-              />
-              <div className="menu-content">
-                <a href="#">Caesar Selections</a>
-                <span>$8.95</span>
-              </div>
-              <div className="menu-ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </div>
-            </div>
-
-            <div className="col-lg-6 menu-item filter-specialty">
-              <img
-                src="assets/img/menu/tuscan-grilled.jpg"
-                className="menu-img"
-                alt=""
-              />
-              <div className="menu-content">
-                <a href="#">Tuscan Grilled</a>
-                <span>$9.95</span>
-              </div>
-              <div className="menu-ingredients">
-                Grilled chicken with provolone, artichoke hearts, and roasted
-                red pesto
-              </div>
-            </div>
-
-            <div className="col-lg-6 menu-item filter-starters">
-              <img
-                src="assets/img/menu/mozzarella.jpg"
-                className="menu-img"
-                alt=""
-              />
-              <div className="menu-content">
-                <a href="#">Mozzarella Stick</a>
-                <span>$4.95</span>
-              </div>
-              <div className="menu-ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </div>
-            </div>
-
-            <div className="col-lg-6 menu-item filter-salads">
-              <img
-                src="assets/img/menu/greek-salad.jpg"
-                className="menu-img"
-                alt=""
-              />
-              <div className="menu-content">
-                <a href="#">Greek Salad</a>
-                <span>$9.95</span>
-              </div>
-              <div className="menu-ingredients">
-                Fresh spinach, crisp romaine, tomatoes, and Greek olives
-              </div>
-            </div>
-
-            <div className="col-lg-6 menu-item filter-salads">
-              <img
-                src="assets/img/menu/spinach-salad.jpg"
-                className="menu-img"
-                alt=""
-              />
-              <div className="menu-content">
-                <a href="#">Spinach Salad</a>
-                <span>$9.95</span>
-              </div>
-              <div className="menu-ingredients">
-                Fresh spinach with mushrooms, hard boiled egg, and warm bacon
-                vinaigrette
-              </div>
-            </div>
-
-            <div className="col-lg-6 menu-item filter-specialty">
-              <img
-                src="assets/img/menu/lobster-roll.jpg"
-                className="menu-img"
-                alt=""
-              />
-              <div className="menu-content">
-                <a href="#">Lobster Roll</a>
-                <span>$12.95</span>
-              </div>
-              <div className="menu-ingredients">
-                Plump lobster meat, mayo and crisp lettuce on a toasted bulky
-                roll
-              </div>
-            </div>
+            {loadingItems ? (
+              <Circles height={"3em"} />
+            ) : (
+              items.map((menuItem) => {
+                return (
+                  <div
+                    className="col-lg-6 menu-item filter-starters"
+                    key={menuItem.id}
+                  >
+                    <Image
+                      key={menuItem.id}
+                      cloudName={process.env.REACT_APP_CLOUD_NAME}
+                      publicId={`${menuItem.image}`}
+                      className="menu-img"
+                      crop="scale"
+                    />
+                    <div className="menu-content">
+                      <a>{menuItem.name}</a>
+                      <span>KSH{menuItem.price}</span>
+                    </div>
+                    <div className="menu-ingredients">
+                      {menuItem.description}
+                    </div>
+                  </div>
+                );
+              })
+            )}
           </div>
         </div>
       </section>

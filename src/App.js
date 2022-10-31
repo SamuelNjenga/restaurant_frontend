@@ -7,6 +7,8 @@ import Navigation from "./components/header/Navigation";
 import Main from "./components/pages/Main";
 
 import { CategoryProvider } from "./contexts/CategoryContext";
+import { MenuItemProvider } from "./contexts/MenuItemContext";
+
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'
@@ -15,13 +17,15 @@ const App = () => {
   return (
     <div>
       <CategoryProvider>
-        <Router>
-          <TopNavbar />
-          <Navigation />
-          <Routes>
-            <Route path="/" element={<Main />} />{" "}
-          </Routes>
-        </Router>
+        <MenuItemProvider>
+          <Router>
+            <TopNavbar />
+            <Navigation />
+            <Routes>
+              <Route path="/" element={<Main />} />{" "}
+            </Routes>
+          </Router>
+        </MenuItemProvider>
       </CategoryProvider>
     </div>
   );

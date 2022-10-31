@@ -10,14 +10,14 @@ export function useCategories() {
 
 export const CategoryProvider = (props) => {
   const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loadingCategories, setLoadingCategories] = useState(true);
 
   const fetchCategories = async () => {
     try {
       const res = await getCategories();
       const data = res.data;
       setCategories(data);
-      setLoading(false);
+      setLoadingCategories(false);
     } catch (err) {
       console.log(err);
     }
@@ -32,8 +32,8 @@ export const CategoryProvider = (props) => {
       value={{
         categories,
         setCategories,
-        loading,
-        setLoading,
+        loadingCategories,
+        setLoadingCategories,
       }}
     >
       {props.children}

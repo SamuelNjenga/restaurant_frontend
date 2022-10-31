@@ -25,6 +25,7 @@
 .menu #menu-flters li.filter-active {
   color: #cda45e;
 }
+
 .menu #menu-flters li:last-child {
   margin-right: 0;
 }
@@ -84,4 +85,8 @@
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.categories__menu{
+  margin-bottom: 20px;
 }
